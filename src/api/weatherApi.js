@@ -5,7 +5,11 @@ import axios from 'axios';
 const BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000/api';
 
 function getAuthHeaders(accessToken) {
-  return { Authorization: `Bearer ${accessToken}` };
+  const headers = { Authorization: `Bearer ${accessToken}` };
+  if (process.env.REACT_APP_CHOREO_API_KEY) {
+    headers['api-key'] = process.env.REACT_APP_CHOREO_API_KEY;
+  }
+  return headers;
 }
 
 export async function getOverview(accessToken) {
