@@ -56,6 +56,7 @@ export default function SearchBar({ onSearch }) {
             <li
               key={city}
               role="option"
+              aria-selected="false"
               onClick={() => handleSelect(city)}
               tabIndex={0}
               onKeyDown={e => e.key === 'Enter' && handleSelect(city)}

@@ -32,7 +32,16 @@ export default function Dashboard() {
       setOverview(cities);
       setSavedLocations(saved);
       if (cities.length > 0) {
-        await selectCity(cities[0].name, token);
+        try {
+          const [current, fc] = await Promise.all([
+            getCurrentWeather(cities[0].name, token),
+            getForecast(cities[0].name, token),
+          ]);
+          setSelected(current);
+          setForecast(fc);
+        } catch {
+          setError('City not found or service unavailable.');
+        }
       }
     } catch (err) {
       console.error('Dashboard fetch error:', err?.response?.status, err?.response?.data || err?.message);
