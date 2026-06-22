@@ -1,0 +1,49 @@
+.forecast-container {
+  background: #152b5e;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.forecast-container h3 {
+  font-size: 1.1rem;
+  color: #90cdf4;
+  margin-bottom: 1rem;
+}
+
+.forecast-grid {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.forecast-day {
+  background: #1e3a6e;
+  border-radius: 12px;
+  padding: 1rem 0.75rem;
+  min-width: 110px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.forecast-date { font-size: 0.78rem; color: #93c5fd; margin-bottom: 0.5rem; }
+.forecast-icon { width: 48px; height: 48px; }
+
+.forecast-temps {
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+.forecast-temps .max { color: #fbbf24; }
+.forecast-temps .min { color: #93c5fd; }
+.forecast-temps .separator { color: #6b7280; }
+
+.forecast-desc {
+  font-size: 0.72rem;
+  color: #9ca3af;
+  text-transform: capitalize;
+  margin-top: 0.25rem;
+}

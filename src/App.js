@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import React from 'react';
+import { useAuthContext } from '@asgardeo/auth-react';
+import Navbar from './components/Navbar';
+import Dashboard from './pages/Dashboard';
+import Login from './pages/Login';
 import './App.css';
 
 function App() {
+  const { state } = useAuthContext();
+
+  if (state.isLoading) {
+    return (
+      <div className="app-loading">
+        <span>Loading...</span>
+      </div>
+    );
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Navbar />
+      {state.isAuthenticated ? <Dashboard /> : <Login />}
     </div>
   );
 }

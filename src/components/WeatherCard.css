@@ -1,0 +1,45 @@
+.weather-card {
+  background: linear-gradient(135deg, #1e3a6e, #2563ab);
+  border-radius: 16px;
+  padding: 1.2rem;
+  min-width: 180px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  transition: transform 0.2s;
+}
+.weather-card:hover { transform: translateY(-4px); }
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.card-header h3 { font-size: 1rem; color: #bfdbfe; }
+
+.save-btn {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #fbbf24;
+  line-height: 1;
+}
+.save-btn.saved { color: #f59e0b; }
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+.weather-icon { width: 64px; height: 64px; }
+.temp { font-size: 2.2rem; font-weight: 700; color: #fff; }
+.desc { font-size: 0.85rem; text-transform: capitalize; color: #93c5fd; }
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+  font-size: 0.78rem;
+  color: #bfdbfe;
+}
