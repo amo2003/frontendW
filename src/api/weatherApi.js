@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Point this at your WSO2 API Manager Gateway URL in production
 // In dev, it hits the Express backend directly
-const BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000/api';
+const BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
 
 function getAuthHeaders(accessToken) {
   const headers = { Authorization: `Bearer ${accessToken}` };
