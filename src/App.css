@@ -5,6 +5,7 @@ body {
   background: #0f1f3d;
   color: #e8f0fe;
   min-height: 100vh;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .app { display: flex; flex-direction: column; min-height: 100vh; }
@@ -26,6 +27,7 @@ body {
   font-size: 0.95rem;
   font-weight: 600;
   transition: opacity 0.2s;
+  touch-action: manipulation;
 }
 .btn:hover { opacity: 0.85; }
 .btn-primary { background: #f97316; color: #fff; }
@@ -37,6 +39,12 @@ body {
   color: #fff;
   padding: 0.75rem 1rem;
   border-radius: 8px;
-  margin: 1rem 2rem;
+  margin: 1rem;
   text-align: center;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  .btn { font-size: 0.85rem; padding: 0.5rem 1rem; }
+  .btn-large { padding: 0.75rem 2rem; font-size: 1rem; }
 }

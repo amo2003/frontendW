@@ -3,31 +3,50 @@
   justify-content: space-between;
   align-items: center;
   background: #152b5e;
-  padding: 0.75rem 2rem;
+  padding: 0.75rem 1.5rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
+  min-width: 0;
 }
 
-.flag { font-size: 1.5rem; }
+.flag { font-size: 1.4rem; flex-shrink: 0; }
 
 .brand-name {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #f97316;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
+  flex-shrink: 0;
 }
 
 .user-name {
   color: #90cdf4;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .navbar { padding: 0.6rem 1rem; }
+  .brand-name { font-size: 1rem; }
+  .user-name { display: none; }
+  .flag { font-size: 1.2rem; }
 }

@@ -1,13 +1,15 @@
 .dashboard {
-  padding: 2rem;
+  padding: 1.5rem 1rem;
   max-width: 1400px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .search-section {
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  padding: 0 0.5rem;
 }
 
 .loading {
@@ -22,34 +24,47 @@
 .selected-section {
   background: #0d1e3c;
   border-radius: 20px;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
 @media (min-width: 768px) {
+  .dashboard { padding: 2rem; }
+
   .selected-section {
     flex-direction: row;
     align-items: flex-start;
+    padding: 1.5rem;
   }
-  .selected-section > *:first-child { min-width: 220px; }
-  .selected-section > *:last-child { flex: 1; }
+  .selected-section > *:first-child { min-width: 220px; max-width: 260px; }
+  .selected-section > *:last-child { flex: 1; min-width: 0; }
 }
 
-.saved-section, .overview-section { margin-bottom: 2rem; }
+.saved-section,
+.overview-section { margin-bottom: 1.5rem; }
 
-.saved-section h2, .overview-section h2 {
-  font-size: 1.2rem;
+.saved-section h2,
+.overview-section h2 {
+  font-size: 1.1rem;
   color: #90cdf4;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+@media (min-width: 480px) {
+  .cards-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+}
+
+@media (min-width: 768px) {
+  .cards-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
 }
 
 .saved-city-chip {
@@ -62,7 +77,9 @@
   color: #93c5fd;
   transition: background 0.2s;
   outline: none;
+  font-size: 0.9rem;
+  touch-action: manipulation;
 }
-.saved-city-chip:hover, .saved-city-chip:focus {
-  background: #2563ab;
-}
+
+.saved-city-chip:hover,
+.saved-city-chip:focus { background: #2563ab; }

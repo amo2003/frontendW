@@ -12,23 +12,26 @@
 
 .searchbar input {
   flex: 1;
-  padding: 0.65rem 1rem;
+  min-width: 0;
+  padding: 0.7rem 1rem;
   border-radius: 10px;
   border: 2px solid #2563ab;
   background: #152b5e;
   color: #e8f0fe;
-  font-size: 0.95rem;
+  font-size: 1rem;
   outline: none;
 }
 .searchbar input:focus { border-color: #f97316; }
 
 .searchbar button {
-  padding: 0.65rem 1rem;
+  padding: 0.7rem 1rem;
   border-radius: 10px;
   border: none;
   background: #f97316;
   cursor: pointer;
   font-size: 1rem;
+  flex-shrink: 0;
+  touch-action: manipulation;
 }
 
 .suggestions {
@@ -42,14 +45,23 @@
   z-index: 100;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   overflow: hidden;
+  max-height: 240px;
+  overflow-y: auto;
 }
 
 .suggestions li {
-  padding: 0.6rem 1rem;
+  padding: 0.75rem 1rem;
   cursor: pointer;
   font-size: 0.9rem;
 }
-.suggestions li:hover, .suggestions li:focus {
+
+.suggestions li:hover,
+.suggestions li:focus {
   background: #2563ab;
   outline: none;
+}
+
+@media (max-width: 480px) {
+  .searchbar input { font-size: 0.95rem; padding: 0.65rem 0.85rem; }
+  .searchbar button { padding: 0.65rem 0.85rem; }
 }
